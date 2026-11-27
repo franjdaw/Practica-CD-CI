@@ -13,6 +13,6 @@ const tituloApp = 'Gestor de tareas 2.0 🚀';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly titulo = variablenoexiste;
+  protected readonly titulo = tituloApp;
   protected readonly servicio = inject(Tareas);
 }
