@@ -4,7 +4,7 @@ import { ListaTareas } from './components/lista-tareas/lista-tareas';
 import { TareaForm } from './components/tarea-form/tarea-form';
 import { Tareas } from './services/tareas';
 
-const tituloApp = 'Gestor de tareas';
+const tituloApp = 'Gestor de tareas 2.0 🚀';
 
 @Component({
   selector: 'app-root',
