@@ -11,6 +11,7 @@ import { Tareas } from './services/tareas';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly titulo = 'Gestor de tareas';
+  // Error a propósito: tituloApp no está declarada
+  protected readonly titulo = tituloApp;
   protected readonly servicio = inject(Tareas);
 }
