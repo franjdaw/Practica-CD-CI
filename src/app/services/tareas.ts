@@ -15,7 +15,8 @@ export class Tareas {
   readonly pendientes = computed(() => this._tareas().filter((t) => !t.completada).length);
 
   agregar(titulo: string): Tarea | null {
-    const limpio = titulo.trim();
+    // Bug a propósito: ya no se recortan los espacios
+    const limpio = titulo;
     if (!limpio) {
       return null;
     }
