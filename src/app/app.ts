@@ -4,6 +4,8 @@ import { ListaTareas } from './components/lista-tareas/lista-tareas';
 import { TareaForm } from './components/tarea-form/tarea-form';
 import { Tareas } from './services/tareas';
 
+const tituloApp = 'Gestor de tareas';
+
 @Component({
   selector: 'app-root',
   imports: [TareaForm, ListaTareas],
@@ -11,7 +13,6 @@ import { Tareas } from './services/tareas';
   styleUrl: './app.css'
 })
 export class App {
-  // Error a propósito: tituloApp no está declarada
   protected readonly titulo = tituloApp;
   protected readonly servicio = inject(Tareas);
 }
