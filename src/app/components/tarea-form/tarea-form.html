@@ -1,0 +1,10 @@
+<form class="tarea-form" (submit)="$event.preventDefault(); enviar()">
+  <input
+    type="text"
+    placeholder="Nueva tarea..."
+    aria-label="Nueva tarea"
+    [value]="texto()"
+    (input)="actualizar($any($event.target).value)"
+  />
+  <button type="submit" [disabled]="!texto().trim()">Añadir</button>
+</form>

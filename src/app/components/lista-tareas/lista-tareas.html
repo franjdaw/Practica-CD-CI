@@ -1,0 +1,15 @@
+@if (tareas().length === 0) {
+  <p class="vacio">No hay tareas todavía. ¡Añade la primera!</p>
+} @else {
+  <ul class="lista">
+    @for (tarea of tareas(); track tarea.id) {
+      <li [class.completada]="tarea.completada">
+        <label>
+          <input type="checkbox" [checked]="tarea.completada" (change)="alternar.emit(tarea.id)" />
+          <span class="titulo">{{ tarea.titulo }}</span>
+        </label>
+        <button class="eliminar" type="button" (click)="eliminar.emit(tarea.id)" aria-label="Eliminar">✕</button>
+      </li>
+    }
+  </ul>
+}
