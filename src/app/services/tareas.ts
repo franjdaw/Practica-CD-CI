@@ -33,4 +33,21 @@ export class Tareas {
   eliminar(id: number): void {
     this._tareas.update((lista) => lista.filter((t) => t.id !== id));
   }
+
+  // Métodos nuevos SIN tests: bajan la cobertura por debajo del umbral
+  limpiarCompletadas(): void {
+    this._tareas.update((lista) => lista.filter((t) => !t.completada));
+  }
+
+  buscar(texto: string): Tarea[] {
+    const q = texto.trim().toLowerCase();
+    if (!q) {
+      return this._tareas();
+    }
+    return this._tareas().filter((t) => t.titulo.toLowerCase().includes(q));
+  }
+
+  marcarTodas(completada: boolean): void {
+    this._tareas.update((lista) => lista.map((t) => ({ ...t, completada })));
+  }
 }
